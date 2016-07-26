@@ -15,7 +15,7 @@ private enum OEXRearViewOptions: Int {
     case UserProfile, MyCourse, MyVideos, FindCourses, MySettings, SubmitFeedback, Debug, Logout
 }
 
-private let LogoutCellDefaultheight: CGFloat = 179.0
+private let LogoutCellDefaultHeight: CGFloat = 130.0
 
 class OEXRearTableViewController : UITableViewController {
 
@@ -181,7 +181,7 @@ class OEXRearTableViewController : UITableViewController {
         if indexPath.row == OEXRearViewOptions.Logout.rawValue {
             let screenHeight = UIScreen.mainScreen().bounds.height
             let tableviewHeight = tableView.contentSize.height
-            return max((screenHeight - tableviewHeight) + LogoutCellDefaultheight, LogoutCellDefaultheight)
+            return max((screenHeight - tableviewHeight) + LogoutCellDefaultHeight, LogoutCellDefaultHeight)
         }
         
         return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
