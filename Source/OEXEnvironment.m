@@ -103,6 +103,10 @@
             [[UserProfileManager alloc]
              initWithNetworkManager:env.networkManager
              session:env.session];
+            UserPreferenceManager* userPreferenceManager =
+            [[UserPreferenceManager alloc]
+             initWithNetworkManager:env.networkManager
+             session:env.session];
             CourseDataManager* courseDataManager =
             [[CourseDataManager alloc]
              initWithAnalytics:env.analytics
@@ -114,7 +118,8 @@
                                                 enrollmentManager:enrollmentManager
                                                         interface:[OEXInterface sharedInterface]
                                                      pushSettings:pushSettingsManager
-                                                   userProfileManager: userProfileManager
+                                               userProfileManager:userProfileManager
+                                            userPreferenceManager:userPreferenceManager
                     ];
         };
         self.networkManagerBuilder = ^(OEXEnvironment* env) {

@@ -49,6 +49,7 @@ static NSString* const OEXStandardDateFormatMicroseconds = @"yyyy-MM-dd'T'HH:mm:
         return nil;
     }
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithName:@"UTC"]];
     [formatter setDateFormat:@"MMMM dd"];
     return [[formatter stringFromDate:date] uppercaseString];
 }
